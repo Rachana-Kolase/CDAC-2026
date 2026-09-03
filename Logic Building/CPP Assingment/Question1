@@ -1,78 +1,62 @@
+//Sensor reading classifier
+
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
-int main1() {
-    const int FLOORS = 3;
-    const int ROOMS = 3;
-    const int WARNING = 30;
+int main(){
+	double temp;
 
-    int temps[FLOORS][ROOMS];
+	cout<<"Enter Range:"<<endl;
+	cin>>temp;
 
+	double tempF=(temp*9.0/5.0)+32.0;
+		cout<<"Temperature :"<<tempF<<endl;
 
-    cout << "Enter temperatures for each floor and room:\n";
-    for (int i = 0; i < FLOORS; i++) {
-        for (int j = 0; j < ROOMS; j++) {
-            cout << "Floor " << i+1 << ", Room " << j+1 << ": ";
-            cin >> temps[i][j];
-        }
-    }
-
-    cout << "\n--- Building Temperature Report ---\n";
-
-
-    cout << setw(10) << "Room1" << setw(10) << "Room2" << setw(10) << "Room3" << endl;
-    for (int i = 0; i < FLOORS; i++) {
-        cout << "Floor " << i+1 << ": ";
-        for (int j = 0; j < ROOMS; j++) {
-            cout << setw(8) << temps[i][j];
-        }
-        cout << endl;
-    }
+int statusCode;
+	if(temp<0){
+		statusCode =-1;
+	}
+	else if(temp <29){
+		statusCode =0;
+	}
+	else if(temp<44){
+	     statusCode =1;
+	}
+	else if(temp<59){
+		     statusCode =2;
+		}
+	else {
+		     statusCode =3;
+		}
 
 
-    int maxTemp = temps[0][0];
-    int hotFloor = 1, hotRoom = 1;
-    for (int i = 0; i < FLOORS; i++) {
-        for (int j = 0; j < ROOMS; j++) {
-            if (temps[i][j] > maxTemp) {
-                maxTemp = temps[i][j];
-                hotFloor = i+1;
-                hotRoom = j+1;
-            }
-        }
-    }
-    cout << "\nHottest room: Floor " << hotFloor << ", Room " << hotRoom
-         << " (" << maxTemp << "°C)\n";
+switch(statusCode){
+case -1:
+	cout<<"Status : SENSOR_ERROR"<<endl;
+	cout<< "Action : Sensor fault — check wiring"<<endl;
+	break;
 
+case 0:
+	cout<<"Status : NORMAL"<<endl;
+	cout<<"Action : No action required"<<endl;
+	break;
 
-    double maxAvg = 0;
-    int avgFloor = 1;
-    for (int i = 0; i < FLOORS; i++) {
-        double sum = 0;
-        for (int j = 0; j < ROOMS; j++) {
-            sum += temps[i][j];
-        }
-        double avg = sum / ROOMS;
-        if (avg > maxAvg) {
-            maxAvg = avg;
-            avgFloor = i+1;
-        }
-    }
-    cout << "Floor with highest average: Floor " << avgFloor
-         << " (" << fixed << setprecision(2) << maxAvg << "°C)\n";
+case 1:
+	cout<<"Status : WARNING"<<endl;
+	cout<<"Action : Alert sent to supervisor"<<endl;
+	break;
 
+case 2:
+	cout<<"Status : CRITICAL"<<endl;
+	cout<<"Action : Cooling system triggered"<<endl;
+	break;
 
-    int warningCount = 0;
-    for (int i = 0; i < FLOORS; i++) {
-        for (int j = 0; j < ROOMS; j++) {
-            if (temps[i][j] >= WARNING) {
-                warningCount++;
-            }
-        }
-    }
-    cout << "Rooms at/above WARNING threshold (" << WARNING << "°C): "
-         << warningCount << endl;
+case 3:
+	cout<<"Status : SHUTDOWN"<<endl;
+	cout<<"Action : Cooling system triggered"<<endl;
+	break;
+};
 
-    return 0;
+cout<<"Reading :" << (tempF>=25.0 ? "Above Average" : "Below Average");
+	return 0;
 }
