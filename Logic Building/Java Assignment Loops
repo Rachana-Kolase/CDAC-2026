@@ -1,0 +1,121 @@
+public class DisplayNumber {
+	
+	
+		public void OddNumber() {
+			System.out.println("Display all odd numbers from 1 to 1000");
+		for(int iTemp=1;iTemp<=1000;iTemp++) {
+			if(iTemp%2 != 0)
+				System.out.println(iTemp);
+		}
+		
+		}
+		
+		
+		public void EvenNumber() {
+			System.out.println("Display all Even numbers from 1 to 500");
+			for(int iTemp=1;iTemp<=500;iTemp++) {
+				if(iTemp%2 == 0)
+					System.out.println(iTemp);
+		}
+		}
+			
+			public void SeventhNo(){
+			System.out.println("Every Seventh No ");
+				for(int iTemp=1;iTemp<=200;iTemp++) {
+					if(iTemp%7 == 0)
+						System.out.println(iTemp);
+				}
+			}
+		
+			
+			//Using for loop print star pattern
+			public void Pattern() {
+				System.out.println("-----------------------------");
+				for(int iTemp=0;iTemp<5;iTemp++) {
+					for(int jTemp=0;jTemp<iTemp;jTemp++) {
+                System.out.print("* ");
+					}
+					System.out.println();
+				}
+			
+			}
+			//Using for loop print star pattern2
+			public void PatternTwo() {
+				System.out.println("-----------------------------");
+				for(int iTemp=0;iTemp<5;iTemp++) {
+					for(int jTemp=0;jTemp<(5-iTemp);jTemp++) {
+                System.out.print("* ");
+					}
+					System.out.println();
+				}
+			
+			}	
+			
+		
+			
+			//Number Pattern
+			
+			public void NumberPattern() {
+				System.out.println("-----------------------------");
+				int num=1;
+				for(int iTemp=0;iTemp<5;iTemp++) {
+					for(int jTemp=0;jTemp<iTemp;jTemp++) {
+                System.out.print(num+" ");
+                num++;
+					}
+				System.out.println();
+				}
+			
+			}
+			
+			
+			
+			//Number Pattern2
+			public void NumberPattern2() {
+				System.out.println("-----------------------------");
+				for(int iTemp=1;iTemp<=6;iTemp++) {
+					for(int jTemp=1;jTemp<=iTemp;jTemp++) {
+                System.out.print((jTemp)+" ");
+					}
+				System.out.println();
+				}
+			
+			}
+			
+			////Number Pattern2
+			public void NumberPattern3() {
+				System.out.println("-----------------------------");
+				for(int iTemp=1;iTemp<=6;iTemp++) {
+					for(int jTemp=1;jTemp<=(6-iTemp)+1;jTemp++) {
+                System.out.print((jTemp)+" ");
+					}
+				System.out.println();
+				}
+			
+			}
+			
+}
+	
+ 
+
+
+public class Program {
+
+	public static void main(String[] args) {
+	DisplayNumber d=new DisplayNumber();
+	
+	d.OddNumber();
+	d.EvenNumber();
+	d.SeventhNo();
+    d.Pattern();
+    d.NumberPattern();
+    d.NumberPattern2();
+    d.NumberPattern3();
+	}
+
+}
+
+
+
+
+
