@@ -1,0 +1,43 @@
+package org.rachana;
+
+import java.util.HashSet;
+import java.util.TreeSet;
+import java.util.Comparator;
+public class Set {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//will not print in sorted order
+		//HashSet<Integer> set=new HashSet<>();
+		
+		//To print in sorted order
+		//Tree set not alllow to store Null values
+		TreeSet<Integer> set=new TreeSet<>();
+		
+		//On insertion gives true value
+	    set.add(77);
+		set.add(22);
+		set.add(99);
+		set.add(100);
+		
+		//To compare Tree set using comparator
+		////TreeSet<Integer> set=new TreeSet<>(new Integercomparator());
+		
+		
+		//Null is allowed but only once becuse it will take duplicate values
+		//set.add(null);
+		
+		//Null is allowed once so it will not print once again
+	    // set.add(null);
+		
+		 //Duplicates are not allowed
+		 set.add(77);	
+			
+System.out.println(set);
+	}
+
+}
+
+
+
+
