@@ -1,0 +1,42 @@
+package org.rachana;
+
+import java.util.Collections;
+import java.util.TreeSet;
+
+public class Treeset {
+
+	public static void main(String[] args) {
+		   
+	  //Write a Java program to create a new tree set, add some colors (string) and print out the tree set.  
+	      TreeSet<String> colours=new TreeSet<>();
+	        colours.add("Red");
+	        colours.add("Black");
+	        colours.add("Navy Blue");
+	        colours.add("White");
+	        colours.add("Maroon");
+	        
+	        System.out.println(colours);
+	        
+	        
+	    //Modify the above Java program to add all the elements of a specified tree set to another tree set.
+	        TreeSet<String> colours22=new TreeSet<>(); 
+	        colours22.add("Gray");
+	        colours22.add("Pink");
+	           colours22.addAll(colours);
+	    	  System.out.println(colours22);
+	    	  
+	    	  
+	   // Modify the above Java program to create a reverse order view of the elements contained in a given tree set.
+	    	//colours22.descendingSet();
+	    	 System.out.println("Reverse Order:" +colours22.descendingSet());
+	     
+	    	 
+	   // 	 Modify the above Java program to get the first and last elements in a tree set.
+	    	 //colours22.first();
+	    	 System.out.println("First Element:"+colours22.first());
+	    	 //colours22.last();
+	    	 System.out.println("Last Element:"+colours22.last());
+	}
+	}           
+
+
