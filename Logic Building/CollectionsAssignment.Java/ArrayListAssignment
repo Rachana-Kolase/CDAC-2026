@@ -1,0 +1,88 @@
+package org.rachana;
+
+import java.util.ArrayList;     //To create Arraylist
+import java.util.Iterator;       //To call cursor
+import java.util.ListIterator;   //To remove,add,remove,replace,
+import java.util.Collections;     //To modify
+import java.util.TreeSet;
+public class ArrayListAss {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Create Array_List
+		ArrayList <String> list=new ArrayList(10);
+		
+		list.add("Red");
+		list.add("Blue");
+		list.add("Black");
+		list.add("Orange");
+		list.add("Maroon");
+		list.add("Navy Blue");
+		System.out.println(list);
+		
+		//To call the Cursor
+		//import java.util.Iterator;
+		//To check it is empty or not
+		Iterator itrator=list.iterator();
+		
+		//To insert an element into the array list at the first position.
+		   list.add(0,"Yellow");
+		   
+	   //Modify the above Java program to retrieve an element (at a specified index) from a given array list.
+		  list.get(3);
+		System.out.println(list.get(3));
+		   
+		//To  Traverse the list
+		//import java.util.ListIterator;
+		ListIterator<String> listIterator=list.listIterator();
+		
+		//To Print the collection-we need to use loop
+		while(listIterator.hasNext()) {
+			System.out.println(listIterator.next());	
+		}
+
+	//Modify the above Java program to update specific array element by given element.
+     //set-to modify
+		list.set(0,"Gray");
+		System.out.println(list);
+		
+		//Modify the above Java program to remove the third element from a array list.
+     list.remove(4);
+     System.out.println(list);
+	
+     //Modify the above Java program to search an element in a array list
+     //To search an element in the Array
+     if (list.contains("Maroon")) {
+    	 System.out.println("Present");
+     }
+    	 else {
+    		 System.out.println("Not Present");
+    	 }
+     //Modify the above Java program to sort a given array list. (Hint : Use the class Collections)
+     //To Sort:import.util.Collection;
+     //to sort in Ascending order
+     Collections.sort(list);
+     System.out.println("After Sorting"+list);
+     
+     //Modify the above Java program to copy one array list into another. (Hint : Use the class Collections)
+     //Create one more array to copy in it Collections.copy(dest,src);
+     ArrayList <String> list2=new ArrayList<>();
+   for(int iTemp=0;iTemp<=list.size();iTemp++)
+   {
+	   list2.add(null);
+   }
+     Collections.copy(list2,list);
+     System.out.println("After copying:"+list2);
+     
+     //Modify the above Java program to shuffle elements in a array list. (Hint : Use the class Collections)
+        Collections.shuffle(list);{
+    	 System.out.println(list);
+    	 }
+//Modify the above Java program to reverse elements in a array list. (Hint : Use the class Collections)
+        Collections.reverse(list);{
+        System.out.println(list);
+        }
+     }
+   }
+
+
