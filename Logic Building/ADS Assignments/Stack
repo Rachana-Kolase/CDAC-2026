@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class StackADS {
+
+    static int[] stack;
+    static int top = -1;
+
+    // PUSH operation
+    static void push(int value) {
+
+        if (top == stack.length - 1) {
+            System.out.println("Stack Overflow");
+        } else {
+         //To insert element we need to increment top
+            top++;
+            stack[top] = value;
+            System.out.println(value + " inserted into stack");
+        }
+    }
+
+    // POP operation
+    static void pop() {
+
+        if (top == -1) {
+            System.out.println("Stack Underflow");
+        } else {
+            System.out.println(stack[top] + " removed from stack");
+            top--;
+        }
+    }
+
+    // PEEK operation
+    static void peek() {
+
+        if (top == -1) {
+            System.out.println("Stack is empty");
+        } else {
+            System.out.println("Top element = " + stack[top]);
+        }
+    }
+
+    // DISPLAY operation
+    static void display() {
+
+        if (top == -1) {
+            System.out.println("Stack is empty");
+        } else {
+
+            System.out.println("Stack elements:");
+
+            for (int i = top; i >= 0; i--) {
+                System.out.println(stack[i]);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter stack size: ");
+        int size = sc.nextInt();
+
+        stack = new int[size];
+        push(10);
+        push(20);
+        push(30);
+
+        display();
+        peek();
+        pop(); 
+        display();
+        sc.close();
+    }
+
